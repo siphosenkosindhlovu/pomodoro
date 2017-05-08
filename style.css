@@ -1,0 +1,143 @@
+body{
+  text-align: center;
+  font-family: 'Segoe UI',sans-serif;
+}
+button{
+  outline: none;
+  cursor: pointer;
+}
+.input_wrapper{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.input{
+  font-size: 25px;
+  text-align: right;
+  padding: 1px;
+  transition: all 0.5s;
+  clear: both;
+}
+
+#value{
+  padding: 5px 15px;
+  margin: 15px 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 2px #ccc;
+}
+
+#minus, #plus{
+  display: inline-block;
+  text-align: center;
+  margin: 15px 5px;
+  cursor: pointer;
+}
+.clock{
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border: 3px solid black;
+  border-radius: 50%;
+  box-shadow: 8px 8px 8px #ccc, inset 8px 8px 8px rgba(100,100,100,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.clock_hand{
+  height: 290px;
+  width: 15px;
+  border: 3px solid black;
+  border-color: transparent;
+  border-top-color: #000000;
+  border-bottom: 0px;
+  border-radius: 15px;
+  transform: rotate(0deg);
+  z-index: -1;
+}
+.clock_inner{
+  height: 145px;
+  width: 3px;
+  border-radius: 5px;
+  border:3px solid black;
+  margin: 5px auto;
+}
+.clock_buttons{
+  position: absolute;
+  bottom: 50px;
+  margin: 0 auto;
+  padding: 5px 15px;
+  display: none;
+}
+.clock_button{
+  font-size: 20px;
+  background: transparent;
+  border: 0px solid black;
+  text-shadow: 4px 4px 4px #ccc;
+}
+.clock_text{
+  position: absolute;
+  font-size: 38px;
+  display: none;
+}
+.animator{
+  animation-name: rotate;
+  animation-delay: 0.1s;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  -webkit-animation-name: rotate;
+  -webkit-animation-delay: 0.1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-play-state: running;
+}
+.start{
+  position: absolute;
+}
+.pause{
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.ended{
+  animation-name: ended;
+  animation-delay: 0s;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: ended;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes ended{
+  0%{
+    border-color: black;
+  }
+  50%{
+    border-color: red;
+  }
+  100%{
+    border-color: black;
+  }
+}
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+    border-top-color: black;
+  }
+  20%{
+    border-top-color: black;
+  }
+  40%{
+    border-top-color: black;
+  }
+  60%{
+    border-top-color: black;
+  }
+  80%{
+    border-top-color: red;
+  }
+  100%{
+    transform: rotate(360deg);
+    border-top-color: red;
+  }
+}
